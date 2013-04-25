@@ -1,16 +1,28 @@
 defmodule PrimeFactorsElixir do
 
-  def factor(number, acc) do
+  def factor(number) do
+    something(number, 2, [])
+  end
 
-    if number > 1 do
-      if rem(number, 2) == 0 do
-        factor(div(number, 2), [2] ++ acc)
+  def something(number, divisor, acc) do
+    if number > 1 && number >= divisor do
+
+      if rem(number, divisor) == 0 do
+        something(div(number, divisor), divisor, acc ++ [divisor])
       else
-        [number] ++ acc
+        divisor = divisor + 1
+        something(number, divisor, acc)
       end
+
     else
       acc
     end
   end
 
 end
+
+
+
+
+
+  # IO.puts "number: #{number} | divisor: #{divisor} | acc: #{acc}"
