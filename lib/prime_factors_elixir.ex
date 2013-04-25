@@ -20,9 +20,3 @@ defmodule PrimeFactorsElixir do
   end
 
 end
-
-
-
-
-
-  # IO.puts "number: #{number} | divisor: #{divisor} | acc: #{acc}"
